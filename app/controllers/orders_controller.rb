@@ -2,7 +2,14 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @items = LineItem.where(order_id: params[:id])
+    # puts @order.line_items.count
+    puts @order.inspect
+    # puts enhanced_cart
+    # puts @order.line_items[0].quantity
+    # puts @order.line_items[1].quantity
   end
+
 
   def create
     charge = perform_stripe_charge

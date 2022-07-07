@@ -1,13 +1,41 @@
-<section class="orders-show">
+<div class="d-flex-column">
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
+  <header class="page-header mx-auto order-summary-item text-center">
+
+  <h3>Thank you for your order!</h3>
+
+  <div class="mt-5"><h1>Order Summary</h1>
+
+  <ul class="list-unstyled">
+  <li>Total: <%= humanized_money_with_symbol @order.total %></li>
+  <li><%=@order.email %></li>
+  
+  
+  </div>
   </header>
 
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+
+
+  <% @items.each do |item| %>
+    <article class="order-summary-item d-flex mx-auto">
+
+    <%= image_tag( item.product.image.thumb.url, class: 'm-2') %>
+
+    <div class="m-2">
+    <ul class="list-unstyled">
+    <li><h4><%= link_to item.product.name, item.product, class: 'nav-link d-inline text-success px-0'%></h4></li>
+    <li class="fs-6"><%= item.quantity %> @ <%= humanized_money_with_symbol item.product.price %></li>
+    <li class="fs-6">Total: <%= humanized_money_with_symbol item.total_price %></li>
+    </ul>
+    </div>
+
+    </article>
+   <% end %>
+
+ 
+  <div class="text-center mt-5">
+  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-success center' %>
   </div>
 
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+</div>
 
-</section>
