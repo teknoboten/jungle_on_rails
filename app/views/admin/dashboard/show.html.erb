@@ -1,2 +1,24 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+
+
+<section class="d-flex mt-2 mx-auto" style="max-width: 80%;"> 
+
+
+
+
+<div class="card text-center" style="width: 28rem;">
+
+<h1><%= @products.count%></h1>
+  <div class="card-body">
+    <h4 class="card-title"><%= link_to "Products", admin_products_url %></h4>
+  </div>
+</div>
+
+
+<div class="card text-center" style="width: 28rem;">
+<h1><%= @categories.count%></h1>
+  <div class="card-body">
+    <h4 class="card-title">Categories</h4>
+  </div>
+</div>
+
+<section>
