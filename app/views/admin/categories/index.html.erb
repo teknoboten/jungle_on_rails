@@ -4,15 +4,21 @@
     <h1>Admin &raquo; All Categories</h1>
   </header>
 
-  <div class="well">
-    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
-  </div>
 
-  <div class="panel panel-default categories">
+
+  <div class="categories">
 
     <% @categories.each do |c| %>
-      <h1><%= c.name %></h1>
+      <h4><%= link_to c.name, category_url(id: c.id) %></h5>
       <% end %>
   </div>
 
+
+
+  <div class="well">
+  <%= link_to 'New Category', [:new, :admin, :category], class: 'btn btn-success mt-4' %>
+</div>
+
 </section>
+
+

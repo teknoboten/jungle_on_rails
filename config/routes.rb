@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  # get '/about', to: 'about#show'
   get '/about' => 'about#show'
   get 'users/new' => 'users#new', as: :new_user 
   post 'users' => 'users#create'
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:create, :show]
 
   namespace :admin do
-    # root to: 'products#index'
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :new, :create]

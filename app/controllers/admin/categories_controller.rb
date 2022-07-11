@@ -36,4 +36,4 @@ end
 
 
 
-{"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Bushes"}, "commit"=>"Create Category"}
+# {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Bushes"}, "commit"=>"Create Category"}
