@@ -16,7 +16,13 @@
   </td>
   
   <td>  
-    STATUS
+    <% if sale.finished? %>
+      <button class="btn btn-danger btn-sm">Finished</button>
+    <% elsif sale.upcoming? %>
+      <button class="btn btn-warning btn-sm">Upcoming</button>
+    <% else %>
+      <button class="btn btn-success btn-sm">Active</button>
+    <% end %>
   </td>
   
 </tr>
